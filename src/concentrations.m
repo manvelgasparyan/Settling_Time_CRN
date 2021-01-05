@@ -1,4 +1,4 @@
-function [t,x] = Concentrations (k, K, S, mu, T, x_0)
+function [t,x] = concentrations (k, K, S, mu, T, x_0)
 %-------------------------------------------------     
 %Division of the time interval
 t_span = 0:T/mu:T;
