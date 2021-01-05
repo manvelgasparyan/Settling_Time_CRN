@@ -18,7 +18,7 @@ function [x_star] = steady_state(x)
 %--------------------------------------------------------------------------
         %The vector d of length r of rational functions in the expressions 
         %of the reaction rates
-        d = Denominator(x);
+        d = genominator(k,K,x);
 %--------------------------------------------------------------------------
         %The diagonal rxr matrix D whose diagonal elements are the elements  
         %of d
