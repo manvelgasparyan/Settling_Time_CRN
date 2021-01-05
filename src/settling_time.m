@@ -33,7 +33,7 @@ function [T_star] = settling_sime(x_star)
         t_span = 0:dt:T1;
         global opts;
         opts = odeset('AbsTol', 1e-8);
-        [~,x] = ode23tb(@Model, t_span, y_0, opts);
+        [~,x] = ode23tb(@mathematical_model, t_span, y_0, opts);
         for i = 1:nvs
             j = non_vanishing_species(i);
             while Bound_Function(x(end,j), x_star(j)) == 0
@@ -42,7 +42,7 @@ function [T_star] = settling_sime(x_star)
             end
         end
         t_span = 0:dt:T1;
-        [t,x] = ode23tb(@Model, t_span, y_0, opts);
+        [t,x] = ode23tb(@mathematical_model, t_span, y_0, opts);
 %-------------------------------------------------------------------------- 
        %non vanishing species
        t_star = zeros(s,1);
@@ -52,7 +52,7 @@ function [T_star] = settling_sime(x_star)
             y = x(:,j);
             z = x_star(j);   
             for p = 1:numel(y)-1
-                if and(Bound_Function(y(p),z) == 0,Bound_Function(y(p+1),z) == 1)
+                if and(bound_function(y(p),z) == 0,bound_function(y(p+1),z) == 1)
                    position = [position p+1];
                 end
             end
