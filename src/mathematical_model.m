@@ -10,7 +10,7 @@ function [dx_dt] = mathematical_model (~, k, K, x)
        phi = exp(Delta'*log(x));
        %---------------------------
        %Rational terms in reaction rates
-       g = Denominator(k,K,x);
+       g = denominator(k,K,x);
        %---------------------------
        %Diagonal of rational terms
        Gamma_g = diag(g);
