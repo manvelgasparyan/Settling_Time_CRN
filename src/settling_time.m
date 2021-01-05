@@ -2,7 +2,7 @@
 %--------The following function is used to determine the settling----------
 %--------time of a given biochemical reaction network----------------------
 %==========================================================================
-function [T_star] = Settling_Time(x_star)
+function [T_star] = settling_sime(x_star)
 %--------------------------------------------------------------------------
 %-------It is a function of one variables x_star, which is the steady------
 %-------state of a given biochemcial network network-----------------------
