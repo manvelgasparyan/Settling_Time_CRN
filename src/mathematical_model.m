@@ -1,4 +1,4 @@
-function [dx_dt] = Model (~, x)
+function [dx_dt] = mathematical_model (~, k, K, x)
        %---------------------------
        %Substrate composition matrix
        Delta  = - min(S,0);
