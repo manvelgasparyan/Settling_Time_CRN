@@ -5,7 +5,7 @@ t_span = 0:T/mu:T;
 %-------------------------------------------------
 x_0(x_0==0) = realmin;
 %-------------------------------------------------
-f = @(tau,xi)Model(tau, xi);
+f = @(tau,xi)mathematical_model(tau, k, K, xi);
 %-------------------------------------------------
 %Species concentrations
 [t,x] = ode23tb(f, t_span, x_0);
